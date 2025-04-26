@@ -1,15 +1,29 @@
 import React from "react";
 import Image from "next/image";
 
+type card = {
+  id: number;
+  title: string;
+  price: number;
+  decription: string;
+  category: string;
+  image: string;
+  rating: {
+    rate: number;
+    count: number;
+  };
+};
 const List = async () => {
-  const data = await fetch("https://fakestoreapi.com/products",{next:{revalidate:600}});
+  const data = await fetch("https://fakestoreapi.com/products", {
+    next: { revalidate: 600 },
+  });
   // console.log(data);
-  const posts = await data.json();
-  //   console.log(posts);
+  const posts: card[] = await data.json();
+  console.log(posts);
 
   return (
     <div className="flex flex-row items-center justify-center gap-8 max-w-lvw flex-wrap ">
-      {posts.map((item) => (
+      {posts.map((item: card) => (
         <div
           key={item.id}
           className="w-50 h-100 shadow-lg shadow-white rounded-lg"
