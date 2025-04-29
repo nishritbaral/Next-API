@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "./components/navbar";
-import List from "./components/list";
+import EventList from "./components/eventList";
 
 export type Card = {
   id: number;
@@ -15,7 +15,7 @@ export type Card = {
   };
 };
 
-export const getData = async () => {
+const getData = async () => {
   const data = await fetch("https://fakestoreapi.com/products", {
     next: { revalidate: 600 },
   });
@@ -24,11 +24,11 @@ export const getData = async () => {
 
 const Home = async () => {
   const posts: Card[] = await getData();
-  console.log(posts);
+  // console.log(posts);
   return (
     <div>
       <Navbar />
-      <List posts={posts} />
+      <EventList data={posts} />
     </div>
   );
 };
