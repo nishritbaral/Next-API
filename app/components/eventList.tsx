@@ -4,11 +4,11 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Link from "next/link";
 import { Card } from "../page";
 
-const List = (props: { posts: Card[] }) => {
-  console.log(props.posts);
+const EventList = (props: { data: Card[] }) => {
+  // console.log(props.data);
   return (
     <div className="flex flex-row items-center justify-center p-2 m-2 gap-8 max-w-lvw flex-wrap ">
-      {props.posts.map((item: Card) => (
+      {props.data.map((item: Card) => (
         <div
           key={item.id}
           className=" flex flex-col w-58 h-96 border-1 border-white rounded-lg  opacity-80 hover:opacity-100 hover:shadow-lg hover:shadow-white hover:scale-105 transition-all ease-in-out duration-200"
@@ -38,4 +38,4 @@ const List = (props: { posts: Card[] }) => {
   );
 };
 
-export default List;
+export default EventList;
