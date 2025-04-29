@@ -26,21 +26,20 @@ const EventCard = ({
   title,
   price,
   description,
-  category,
   image,
   rating,
 }: props) => {
-  console.log({
-    state,
-    stateChange,
-    id,
-    title,
-    price,
-    description,
-    category,
-    image,
-    ratingRate: rating.rate,
-  });
+  // console.log({
+  //   state,
+  //   stateChange,
+  //   id,
+  //   title,
+  //   price,
+  //   description,
+  //   category,
+  //   image,
+  //   ratingRate: rating.rate,
+  // });
   return (
     <Dialog
       open={state}
@@ -50,7 +49,7 @@ const EventCard = ({
       }}
     >
       <DialogContent className="flex flex-col flex-fill p-2 m-2 gap-8">
-        <div className="flex h-[10] w-[10] justify-end items-end">
+        <div className="flex justify-end items-start ml-2 mr-2 p- 2 h-2 w-fill ">
           <CloseIcon
             className=" w-10 h-10 border-2 border-white rounded-full bg-black text-white  hover:bg-white hover:text-black hover:scale-110 transition-all duration-300 ease-in-out"
             onClick={() => {
